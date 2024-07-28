@@ -1,7 +1,7 @@
 <?php
   $page_title = 'Add Product';
   require_once('includes/load.php');
-  // Checkin What level user has permission to view this page
+  // Check what level user has permission to view this page
   page_require_level(2);
   $all_categories = find_all('categories');
   $all_photo = find_all('media');
@@ -21,7 +21,7 @@
      } else {
        $media_id = remove_junk($db->escape($_POST['product-photo']));
      }
-     $date    = make_date();
+     $date    = make_date(); // Ensure make_date() returns the correct format
      $query  = "INSERT INTO products (";
      $query .=" name,quantity,buy_price,sale_price,categorie_id,media_id,date";
      $query .=") VALUES (";
@@ -32,7 +32,7 @@
        $session->msg('s',"Product added ");
        redirect('add_product.php', false);
      } else {
-       $session->msg('d',' Sorry failed to added!');
+       $session->msg('d',' Sorry failed to add!');
        redirect('product.php', false);
      }
 
@@ -106,7 +106,7 @@
                  <div class="col-md-4">
                    <div class="input-group">
                      <span class="input-group-addon">
-                       <i class="glyphicon glyphicon-usd"></i>
+                       NPR
                      </span>
                      <input type="number" class="form-control" name="buying-price" placeholder="Buying Price">
                      <span class="input-group-addon">.00</span>
@@ -115,7 +115,7 @@
                   <div class="col-md-4">
                     <div class="input-group">
                       <span class="input-group-addon">
-                        <i class="glyphicon glyphicon-usd"></i>
+                        NPR
                       </span>
                       <input type="number" class="form-control" name="saleing-price" placeholder="Selling Price">
                       <span class="input-group-addon">.00</span>

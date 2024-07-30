@@ -1,7 +1,7 @@
 <?php
   $page_title = 'Edit product';
   require_once('includes/load.php');
-  // Checkin What level user has permission to view this page
+  // Check what level user has permission to view this page
    page_require_level(2);
 ?>
 <?php
@@ -38,7 +38,7 @@ if(!$product){
                  $session->msg('s',"Product updated ");
                  redirect('product.php', false);
                } else {
-                 $session->msg('d',' Sorry failed to updated!');
+                 $session->msg('d',' Sorry failed to update!');
                  redirect('edit_product.php?id='.$product['id'], false);
                }
 
@@ -61,7 +61,7 @@ if(!$product){
         <div class="panel-heading">
           <strong>
             <span class="glyphicon glyphicon-th"></span>
-            <span>Add New Product</span>
+            <span>Edit Product</span>
          </strong>
         </div>
         <div class="panel-body">
@@ -79,7 +79,7 @@ if(!$product){
                 <div class="row">
                   <div class="col-md-6">
                     <select class="form-control" name="product-categorie">
-                    <option value=""> Select a categorie</option>
+                    <option value=""> Select a category</option>
                    <?php  foreach ($all_categories as $cat): ?>
                      <option value="<?php echo (int)$cat['id']; ?>" <?php if($product['categorie_id'] === $cat['id']): echo "selected"; endif; ?> >
                        <?php echo remove_junk($cat['name']); ?></option>
@@ -113,10 +113,10 @@ if(!$product){
                  </div>
                  <div class="col-md-4">
                   <div class="form-group">
-                    <label for="qty">Buying price</label>
+                    <label for="buying-price">Buying price</label>
                     <div class="input-group">
                       <span class="input-group-addon">
-                        <i class="glyphicon glyphicon-usd"></i>
+                        NPR
                       </span>
                       <input type="number" class="form-control" name="buying-price" value="<?php echo remove_junk($product['buy_price']);?>">
                       <span class="input-group-addon">.00</span>
@@ -125,10 +125,10 @@ if(!$product){
                  </div>
                   <div class="col-md-4">
                    <div class="form-group">
-                     <label for="qty">Selling price</label>
+                     <label for="saleing-price">Selling price</label>
                      <div class="input-group">
                        <span class="input-group-addon">
-                         <i class="glyphicon glyphicon-usd"></i>
+                         NPR
                        </span>
                        <input type="number" class="form-control" name="saleing-price" value="<?php echo remove_junk($product['sale_price']);?>">
                        <span class="input-group-addon">.00</span>

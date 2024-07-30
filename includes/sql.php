@@ -351,4 +351,36 @@ function  monthlySales($year){
   return find_by_sql($sql);
 }
 
+/* for orders.php  */
+function join_orders_table() {
+  global $db;
+  $sql  = "SELECT o.id, o.customer_name, o.product_name, o.quantity, o.total_price, o.order_date, o.status ";
+  $sql .= "FROM orders o ";
+  $sql .= "ORDER BY o.order_date DESC";
+  $result = $db->query($sql);
+  
+  if ($result && $db->num_rows($result) > 0) {
+      return $result->fetch_all(MYSQLI_ASSOC); // Fetch data as an associative array
+  } else {
+      return false;
+  }
+}
+
+//inventory management 
+function join_inventory_table() {
+  global $db;
+  $sql  = "SELECT i.id, i.product_id, p.name as product_name, i.quantity, i.buy_price, i.sale_price, i.date_added, i.status ";
+  $sql .= "FROM inventory i ";
+  $sql .= "JOIN products p ON i.product_id = p.id ";
+  $sql .= "ORDER BY i.date_added DESC";
+  $result = $db->query($sql);
+
+  if ($result) {
+      return $result->fetch_all(MYSQLI_ASSOC);
+  } else {
+      return false;
+  }
+}
+
+
 ?>

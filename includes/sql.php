@@ -382,5 +382,17 @@ function join_inventory_table() {
   }
 }
 
+//supplier_report
+function find_suppliers_by_date_range($start_date, $end_date) {
+  global $db;
+  $start_date = $db->escape($start_date);
+  $end_date = $db->escape($end_date);
+  // Replace 'created_at' with your actual column name
+  $sql  = "SELECT * FROM suppliers WHERE created_at BETWEEN '{$start_date}' AND '{$end_date}'";
+  return find_by_sql($sql);
+}
+
+
+
 
 ?>

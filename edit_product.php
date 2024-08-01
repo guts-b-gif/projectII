@@ -1,7 +1,7 @@
 <?php
   $page_title = 'Edit product';
   require_once('includes/load.php');
-  // Check what level user has permission to view this page
+ 
    page_require_level(2);
 ?>
 <?php

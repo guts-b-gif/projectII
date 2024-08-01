@@ -4,7 +4,7 @@
    page_require_level(3);
 ?>
 <?php
-//update user image
+
   if(isset($_POST['submit'])) {
   $photo = new Media();
   $user_id = (int)$_POST['user_id'];
@@ -19,7 +19,7 @@
   }
 ?>
 <?php
- //update user other info
+ 
   if(isset($_POST['update'])){
     $req_fields = array('name','username' );
     validate_fields($req_fields);

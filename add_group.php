@@ -28,11 +28,11 @@
         $query .=" '{$name}', '{$level}','{$status}'";
         $query .=")";
         if($db->query($query)){
-          //sucess
+         
           $session->msg('s',"Group has been creted! ");
           redirect('add_group.php', false);
         } else {
-          //failed
+          
           $session->msg('d',' Sorry failed to create Group!');
           redirect('add_group.php', false);
         }

@@ -1,9 +1,8 @@
 <?php
 $page_title = 'Order Status';
 require_once('includes/load.php');
-page_require_level(2); // Adjust the access level as needed
-$orders = join_orders_table(); // Assuming this function fetches all order details
-?>
+page_require_level(2); 
+$orders = join_orders_table();
 <?php include_once('layouts/header.php'); ?>
 <div class="row">
    <div class="col-md-12">

@@ -3,14 +3,13 @@ $page_title = 'Edit Supplier';
 require_once('includes/load.php');
 page_require_level(2);
 
-// Check if an ID is provided in the URL
 $supplier_id = (int)$_GET['id'];
 if(!$supplier_id){
   $session->msg("d","Missing supplier id.");
   redirect('manage_suppliers.php');
 }
 
-// Fetch supplier details
+
 $supplier = find_by_id('suppliers', $supplier_id);
 if(!$supplier){
   $session->msg("d","Missing supplier.");

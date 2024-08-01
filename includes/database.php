@@ -10,9 +10,7 @@ class MySqli_DB {
       $this->db_connect();
     }
 
-/*--------------------------------------------------------------*/
-/* Function for Open database connection
-/*--------------------------------------------------------------*/
+
 public function db_connect()
 {
   $this->con = mysqli_connect(DB_HOST,DB_USER,DB_PASS);

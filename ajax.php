@@ -27,7 +27,7 @@
    }
  ?>
  <?php
- // find all product
+
   if(isset($_POST['p_name']) && strlen($_POST['p_name']))
   {
     $product_title = remove_junk($db->escape($_POST['p_name']));

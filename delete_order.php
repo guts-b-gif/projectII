@@ -9,7 +9,8 @@ if(isset($_GET['id'])){
   if($delete_id){
     $session->msg("s","Order deleted.");
     redirect('orders.php');
-  } else {
+  }
+   else {
     $session->msg("d","Order deletion failed.");
     redirect('orders.php');
   }

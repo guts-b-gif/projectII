@@ -46,8 +46,8 @@ if(isset($_POST['add_inventory'])){
               <label for="product_id">Product</label>
               <select class="form-control" name="product_id" required>
                 <?php
-                // Fetch and display products for the dropdown
-                $products = join_product_table(); // Ensure this function is defined and works correctly
+        
+                $products = join_product_table(); 
                 foreach ($products as $product):
                 ?>
                 <option value="<?php echo (int)$product['id']; ?>">

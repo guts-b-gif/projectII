@@ -1,7 +1,7 @@
 <?php
   $page_title = 'Add Product';
   require_once('includes/load.php');
-  // Check what level user has permission to view this page
+  
   page_require_level(2);
   $all_categories = find_all('categories');
   $all_photo = find_all('media');
@@ -21,7 +21,7 @@
      } else {
        $media_id = remove_junk($db->escape($_POST['product-photo']));
      }
-     $date    = make_date(); // Ensure make_date() returns the correct format
+     $date    = make_date(); 
      $query  = "INSERT INTO products (";
      $query .=" name,quantity,buy_price,sale_price,categorie_id,media_id,date";
      $query .=") VALUES (";

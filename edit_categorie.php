@@ -1,11 +1,11 @@
 <?php
   $page_title = 'Edit categorie';
   require_once('includes/load.php');
-  // Checkin What level user has permission to view this page
+ 
   page_require_level(1);
 ?>
 <?php
-  //Display all catgories.
+
   $categorie = find_by_id('categories',(int)$_GET['id']);
   if(!$categorie){
     $session->msg("d","Missing categorie id.");

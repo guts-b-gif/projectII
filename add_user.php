@@ -23,11 +23,11 @@
         $query .=" '{$name}', '{$username}', '{$password}', '{$user_level}','1'";
         $query .=")";
         if($db->query($query)){
-          //sucess
+          
           $session->msg('s',"User account has been creted! ");
           redirect('add_user.php', false);
         } else {
-          //failed
+         
           $session->msg('d',' Sorry failed to create account!');
           redirect('add_user.php', false);
         }

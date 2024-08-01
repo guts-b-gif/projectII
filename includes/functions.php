@@ -26,9 +26,6 @@ function first_character($str){
   $val = ucfirst($val);
   return $val;
 }
-/*--------------------------------------------------------------*/
-/* Function for Checking input fields not empty
-/*--------------------------------------------------------------*/
 function validate_fields($var){
   global $errors;
   foreach ($var as $field) {

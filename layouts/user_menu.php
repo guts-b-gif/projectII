@@ -1,3 +1,4 @@
+
 <ul>
   <li>
     <a href="home.php">
@@ -16,7 +17,7 @@
      </ul>
   </li>
   <li>
-    <a href="#" class="submenu-toggle">
+    <a href="#" class="submenu-toggle"> 
       <i class="glyphicon glyphicon-signal"></i>
        <span>Sales Report</span>
       </a>

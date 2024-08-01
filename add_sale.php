@@ -1,6 +1,7 @@
 <?php
   $page_title = 'Add Sale';
   require_once('includes/load.php');
+  
   // Checkin What level user has permission to view this page
    page_require_level(3);
 ?>
